@@ -1,0 +1,107 @@
+/* article-shell.css —— 工作台页面的局部排版与侧边栏折叠行为。 */
+
+/* 全站外壳尺寸由 style.css 管理，这里只开放工作区折叠入口。 */
+.article-ui #sidebar-collapse {
+  display: inline-flex; position: absolute; top: 50%; right: -14px; transform: translateY(-50%);
+  width: 28px; height: 28px; align-items: center; justify-content: center;
+  border: 1px solid var(--mantine-color-default-border); border-radius: 50%;
+  color: var(--mantine-color-dimmed); background: var(--mantine-color-default);
+  box-shadow: var(--mantine-shadow-sm); font-size: var(--mantine-font-size-lg); line-height: 1; z-index: 45;
+}
+.article-ui #sidebar-collapse:hover { color: var(--mantine-primary-color-filled); border-color: var(--mantine-primary-color-filled); }
+
+/* 二级导航（面包屑）明显弱于页面标题 */
+.article-ui .workspace-breadcrumb {
+  display: inline-flex; gap: var(--mantine-spacing-xs);
+  color: var(--mantine-color-placeholder); font-size: var(--mantine-font-size-xs);
+}
+
+/* ---------- 工作台页面 ---------- */
+.settings-workspace { display: grid; gap: var(--mantine-spacing-lg); min-width: 0; }
+.settings-workspace > * { min-width: 0; }
+.settings-workspace .card { padding: var(--mantine-spacing-lg); }
+.settings-workspace .section-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--mantine-spacing-md); margin-bottom: var(--mantine-spacing-md); }
+.settings-workspace h3 { font-size: var(--mantine-font-size-md); margin-bottom: var(--mantine-spacing-xxs); }
+.settings-workspace .hint { color: var(--mantine-color-dimmed); }
+.account-table { min-width: 850px; width: 100%; }
+.account-table th { font-size: var(--mantine-font-size-xs); font-weight: 500; background: var(--mantine-color-default-hover); }
+.account-table .account-name { width: 1%; }
+.account-table .account-identity { display: flex; align-items: center; gap: var(--mantine-spacing-sm); }
+.account-table .account-email { max-width: 280px; overflow: hidden; text-overflow: ellipsis; font-size: var(--mantine-font-size-xs); color: var(--mantine-color-dimmed); }
+.account-table .u-name { width: 160px; flex: 0 0 160px; font-weight: 500; }
+.account-table .u-role { min-width: 110px; }
+.account-table .save-state { color: var(--mantine-color-dimmed); }
+.account-table .save-state.is-error { color: var(--wb-danger); }
+.account-table .cell-actions { flex-wrap: wrap; min-width: 200px; }
+.deleted-accounts { margin-top: var(--mantine-spacing-lg); border-top: 1px solid var(--mantine-color-default-border); padding-top: var(--mantine-spacing-md); }
+.deleted-accounts > summary { cursor: pointer; font-weight: 500; }
+.deleted-accounts > summary .tag { margin-left: var(--mantine-spacing-xs); }
+.deleted-accounts > .hint { margin: var(--mantine-spacing-sm) 0; }
+.deleted-account-table { width: 100%; min-width: 580px; font-size: var(--mantine-font-size-xs); }
+.deleted-account-table td:first-child { overflow-wrap: anywhere; }
+.account-restore-effects { padding-left: var(--mantine-spacing-lg); line-height: 1.7; margin: var(--mantine-spacing-md) 0; }
+.delete-account-identity { overflow-wrap: anywhere; margin-bottom: var(--mantine-spacing-sm); }
+.account-transfer-summary { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: var(--mantine-spacing-xs); margin: var(--mantine-spacing-md) 0; padding: var(--mantine-spacing-sm); border-radius: var(--mantine-radius-sm); background: var(--mantine-color-default-hover); }
+.account-transfer-summary span { display: flex; flex-direction: column; gap: var(--mantine-spacing-xxs); color: var(--mantine-color-dimmed); font-size: var(--mantine-font-size-xs); }
+.account-transfer-summary strong { color: var(--mantine-color-text); font-size: var(--mantine-font-size-lg); font-weight: 500; }
+.account-delete-error { color: var(--wb-danger); margin-top: var(--mantine-spacing-sm); }
+.settings-workspace .connection-settings { width: 100%; max-width: 800px; justify-self: start; }
+.settings-workspace .connection-settings > summary { cursor: pointer; list-style: none; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: var(--mantine-spacing-sm); }
+.settings-workspace .connection-settings > summary::-webkit-details-marker { display: none; }
+.connection-heading { min-width: 0; }
+.connection-title { display: flex; align-items: center; flex-wrap: wrap; gap: var(--mantine-spacing-xxs) var(--mantine-spacing-sm); }
+.settings-workspace .connection-title h3 { margin: 0; }
+.connection-heading .hint { margin-top: var(--mantine-spacing-xxs); }
+.settings-workspace .connection-settings > summary::after { content: '+'; font-size: var(--mantine-font-size-lg); color: var(--mantine-color-dimmed); }
+.settings-workspace .connection-settings[open] > summary::after { content: '−'; }
+.settings-workspace .connection-settings[open] > summary { margin-bottom: var(--mantine-spacing-md); }
+.settings-workspace #gcfg-form { width: 100%; }
+.settings-workspace .settings-note {
+  padding: var(--mantine-spacing-sm) var(--mantine-spacing-md); background: var(--mantine-color-default-hover);
+  border-radius: var(--mantine-radius-sm); color: var(--mantine-color-dimmed);
+  font-size: var(--mantine-font-size-xs); margin-top: var(--mantine-spacing-md); line-height: 1.7;
+}
+
+/* ---------- 模块标题 / 正文 / 元信息 ---------- */
+:is(.pw-panel, .settings-workspace, .modal-head) h3 { font-size: var(--mantine-font-size-md); line-height: 1.5; }
+
+:is(.am-tab, .pw-tabs button) { font-size: var(--mantine-font-size-sm); font-weight: 500; }
+:is(.am-tab, .pw-tabs button).is-active { font-weight: 600; }
+:is(.am-summary-group h3, .pw-import-panel h4) { font-size: var(--mantine-font-size-xs); letter-spacing: normal; }
+:is(.pw-project-meta, .pw-roster-person, .pw-event) strong { font-weight: 500; }
+/* 元信息弱于标题和正文，保留数据表的紧凑节奏。 */
+:is(.am-summary .stat .sub, .am-url-secondary, .pw-url, .pw-domain-cell, .pw-project-meta, .pw-resource-status, .pw-sync-row small, .pw-roster-person small, .pw-event small) { font-size: var(--mantine-font-size-xs); line-height: 1.5; }
+/* 数字列使用 tabular-nums，位数变化时仍可对齐。 */
+:is(.am-main-table, .pw-table, .account-table) { font-size: var(--mantine-font-size-xs); font-variant-numeric: tabular-nums; }
+:is(.pw-table, .account-table) th { font-size: var(--mantine-font-size-xs); font-weight: 500; }
+.am-main-table > thead > tr > th { font-size: var(--mantine-font-size-xs); font-weight: 500; }
+:is(.am-title-text, .pw-title-text, .ph-inline-title, .ext-inline-title, .u-name) { font-weight: 500; }
+:is(.am-number, .stat .value, .pw-project-meta, .am-top-pages, .pw-pager, .am-pager) { font-variant-numeric: tabular-nums; }
+:is(button, input, select, textarea, .combo-opt-note, .ke-row span) { font-family: var(--mantine-font-family); }
+:is(input, select, textarea) { font-weight: 400; letter-spacing: normal; }
+
+/* ---------- 侧边栏折叠 ---------- */
+.article-ui.sidebar-compact #sidebar { width: var(--wb-sidebar-w-compact); }
+.article-ui.sidebar-compact #main { margin-left: var(--wb-sidebar-w-compact); }
+.article-ui.sidebar-compact #topbar { left: var(--wb-sidebar-w-compact); }
+.article-ui.sidebar-compact :is(.brand-name, .nav-item span, .current-account-details, .account-logout span) { display: none; }
+.article-ui.sidebar-compact .sidebar-foot { flex-direction: column; padding: var(--mantine-spacing-sm) 0; }
+.article-ui.sidebar-compact .current-account { flex: none; }
+.article-ui.sidebar-compact .nav-group-label { display: none; }
+.article-ui.sidebar-compact #nav { padding: var(--mantine-spacing-lg) var(--mantine-spacing-xs); }
+.article-ui.sidebar-compact .nav-item { justify-content: center; padding: 0; }
+.article-ui.sidebar-compact .nav-item svg { flex: 0 0 16px; }
+
+/* ---------- 响应式 ---------- */
+@media (max-width: 900px) {
+  .article-ui.sidebar-compact #sidebar { width: var(--wb-sidebar-w); }
+  .article-ui.sidebar-compact :is(.brand-name, .nav-item span, .current-account-details, .account-logout span) { display: initial; }
+  .article-ui.sidebar-compact .sidebar-foot { flex-direction: row; padding: var(--mantine-spacing-md) var(--mantine-spacing-lg); }
+  .article-ui.sidebar-compact .current-account { flex: 1; }
+  .article-ui.sidebar-compact .nav-group-label { display: block; }
+  .article-ui.sidebar-compact #nav { padding: var(--mantine-spacing-lg) var(--mantine-spacing-md); }
+  .article-ui.sidebar-compact .nav-item { justify-content: flex-start; padding: 0 var(--mantine-spacing-sm); }
+  .article-ui.sidebar-compact #main { margin-left: 0; }
+  .article-ui.sidebar-compact #topbar { left: 0; }
+  .article-ui #sidebar-collapse { display: none; }
+}

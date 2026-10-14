@@ -1,0 +1,26 @@
+{
+  "name": "seo-workbench",
+  "version": "0.7.0",
+  "description": "个人 / 小团队 SEO 业务管理系统参考实现：项目、任务、排期、链接与 GSC/GA4 数据抓取",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "theme": "node scripts/gen-theme.mjs"
+  },
+  "engines": {
+    "node": "24.x"
+  },
+  "overrides": {
+    "qs": "6.16.0"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "1.32.1",
+    "express": "^4.19.2",
+    "rss-parser": "3.13.0",
+    "zod": "4.6.5"
+  },
+  "devDependencies": {
+    "@mantine/core": "^8.3.18"
+  }
+}

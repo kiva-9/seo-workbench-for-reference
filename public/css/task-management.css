@@ -1,0 +1,10 @@
+.task-management, .task-view-panel { min-width: 0; }
+.task-view-tabs { display: flex; gap: var(--mantine-spacing-xxs); width: fit-content; max-width: 100%; padding: var(--mantine-spacing-xxs); margin-bottom: var(--mantine-spacing-xl); border: 1px solid var(--mantine-color-default-border); border-radius: var(--mantine-radius-md); background: var(--mantine-color-default); }
+.task-view-tab { flex: 1; min-width: 80px; height: var(--wb-control-h-sm); padding: 0 var(--mantine-spacing-lg); border: 1px solid transparent; border-radius: var(--mantine-radius-sm); background: transparent; color: var(--mantine-color-dimmed); font-size: var(--mantine-font-size-sm); white-space: nowrap; }
+.task-view-tab:hover { color: var(--mantine-color-text); background: var(--mantine-color-default-hover); }
+.task-view-tab[aria-selected="true"] { color: var(--wb-tab-active-fg); background: var(--wb-tab-active-bg); border-color: var(--mantine-color-default-border); font-weight: 600; }
+.task-view-panel:focus-visible { outline-offset: var(--mantine-spacing-xxs); }
+@media (max-width: 700px) {
+  .task-view-tabs { width: 100%; margin-bottom: var(--mantine-spacing-lg); }
+  .task-view-tab { min-width: 0; padding-inline: var(--mantine-spacing-sm); }
+}

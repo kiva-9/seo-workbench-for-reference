@@ -1,0 +1,65 @@
+.mcp-page-head, .mcp-workspace { width: 100%; max-width: 1440px; margin-left: auto; margin-right: auto; }
+.mcp-page-tabs { margin-bottom: 0; }
+.mcp-management-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(300px, 400px); gap: var(--mantine-spacing-lg); align-items: start; }
+.mcp-tab-panel[hidden], .mcp-back-to-top[hidden] { display: none; }
+.mcp-back-to-top { position: fixed; right: var(--mantine-spacing-xl); bottom: max(var(--mantine-spacing-xl), env(safe-area-inset-bottom)); z-index: 35; width: 44px; height: 44px; padding: 0; border-radius: 50%; box-shadow: var(--mantine-shadow-md); }
+.mcp-guide { line-height: 1.7; min-width: 0; }
+.mcp-guide h4 { font-size: var(--mantine-font-size-sm); font-weight: 600; margin-bottom: var(--mantine-spacing-xxs); }
+.mcp-steps { margin: 0; padding-left: var(--mantine-spacing-lg); }
+.mcp-steps > li { padding-left: var(--mantine-spacing-xs); }
+.mcp-steps > li + li { margin-top: var(--mantine-spacing-lg); }
+.mcp-steps > li::marker { color: var(--mantine-primary-color-filled); font-weight: 600; }
+.mcp-example { white-space: pre-wrap; overflow-wrap: anywhere; padding: var(--mantine-spacing-sm); margin: var(--mantine-spacing-xs) 0; border: 1px solid var(--mantine-color-default-border); border-radius: var(--mantine-radius-sm); background: var(--mantine-color-default-hover); }
+.mcp-guide code { font-size: 0.95em; overflow-wrap: anywhere; }
+.mcp-workspace .form-actions { flex-wrap: wrap; }
+.mcp-copy-field { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--mantine-spacing-sm); align-items: center; }
+.mcp-token-create { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: var(--mantine-spacing-sm); align-items: end; margin-top: var(--mantine-spacing-md); }
+.mcp-token-create .form-row, .mcp-catalog-filters .form-row { margin-bottom: 0; }
+.mcp-token-capacity { margin: var(--mantine-spacing-sm) 0; }
+.mcp-token-once { padding: var(--mantine-spacing-md); border: 1px solid var(--mantine-color-default-border); border-radius: var(--mantine-radius-sm); margin: var(--mantine-spacing-md) 0; }
+.mcp-token-once .mcp-copy-field { margin-top: var(--mantine-spacing-xs); }
+.mcp-token-once input { width: 100%; }
+.mcp-token-list { padding: 0; margin: var(--mantine-spacing-md) 0 0; list-style: none; display: grid; gap: var(--mantine-spacing-sm); }
+.mcp-token-item, .mcp-tool-item { min-width: 0; padding: var(--mantine-spacing-md); border: 1px solid var(--mantine-color-default-border); border-radius: var(--mantine-radius-sm); }
+.mcp-token-item .section-heading, .mcp-tool-item .section-heading { margin-bottom: var(--mantine-spacing-xs); flex-wrap: wrap; }
+.mcp-token-item h4, .mcp-tool-item h4 { overflow-wrap: anywhere; font-size: var(--mantine-font-size-sm); }
+.mcp-token-identifier { overflow-wrap: anywhere; margin-bottom: var(--mantine-spacing-sm); }
+.mcp-token-times { display: flex; gap: var(--mantine-spacing-sm) var(--mantine-spacing-lg); flex-wrap: wrap; margin-bottom: var(--mantine-spacing-sm); font-size: var(--mantine-font-size-sm); }
+.mcp-token-times dt { color: var(--mantine-color-dimmed); }
+.mcp-token-times dd { margin: var(--mantine-spacing-xxs) 0 0; }
+.mcp-tutorial { padding: var(--mantine-spacing-md); margin: var(--mantine-spacing-md) 0; background: var(--mantine-color-default-hover); border-radius: var(--mantine-radius-sm); line-height: 1.7; }
+.mcp-tutorial h4 { font-size: var(--mantine-font-size-sm); margin-bottom: var(--mantine-spacing-xs); }
+.mcp-scenarios { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: var(--mantine-spacing-md); margin: var(--mantine-spacing-md) 0; }
+.mcp-scenarios h5 { font-size: var(--mantine-font-size-sm); margin-bottom: var(--mantine-spacing-xs); }
+.mcp-operation-tip { margin-top: var(--mantine-spacing-sm); }
+.mcp-group-nav { display: flex; flex-wrap: wrap; gap: var(--mantine-spacing-xs); margin-top: var(--mantine-spacing-md); }
+.mcp-group-nav .btn { white-space: normal; text-align: left; }
+.mcp-group-nav span { color: var(--mantine-color-dimmed); margin-left: var(--mantine-spacing-xs); }
+.mcp-catalog-filters { display: grid; grid-template-columns: minmax(0, 1fr) repeat(2, minmax(130px, 160px)); gap: var(--mantine-spacing-sm); margin: var(--mantine-spacing-md) 0 var(--mantine-spacing-sm); }
+.mcp-catalog-actions { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: var(--mantine-spacing-sm); margin-bottom: var(--mantine-spacing-md); }
+.mcp-catalog-actions > div { display: flex; flex-wrap: wrap; gap: var(--mantine-spacing-xs); }
+.mcp-tool-groups { display: grid; gap: var(--mantine-spacing-md); }
+.mcp-tool-group { border: 1px solid var(--mantine-color-default-border); border-radius: var(--mantine-radius-sm); padding: var(--mantine-spacing-md); scroll-margin-top: 80px; }
+.mcp-tool-group summary { display: flex; align-items: center; gap: var(--mantine-spacing-sm); cursor: pointer; list-style: none; }
+.mcp-tool-group summary::-webkit-details-marker { display: none; }
+.mcp-tool-group summary::before { content: '›'; flex: 0 0 auto; font-size: var(--mantine-font-size-lg); color: var(--mantine-color-dimmed); }
+.mcp-tool-group[open] summary::before { transform: rotate(90deg); }
+.mcp-tool-group summary > div { min-width: 0; flex: 1; }
+.mcp-tool-group summary h4 { font-size: var(--mantine-font-size-sm); }
+.mcp-tool-group summary .hint { margin-top: var(--mantine-spacing-xxs); }
+.mcp-tool-group > .mcp-tool-grid { margin-top: var(--mantine-spacing-md); }
+.mcp-tool-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--mantine-spacing-sm); margin-top: var(--mantine-spacing-sm); }
+.mcp-tool-item { display: flex; flex-direction: column; }
+.mcp-tool-item[hidden], .mcp-tool-group[hidden] { display: none; }
+.mcp-tool-name, .mcp-tool-description { overflow-wrap: anywhere; }
+.mcp-tool-description { margin: var(--mantine-spacing-xs) 0; line-height: 1.7; }
+.mcp-tool-restrictions { padding-left: var(--mantine-spacing-lg); margin-top: var(--mantine-spacing-xs); font-size: var(--mantine-font-size-sm); color: var(--mantine-color-dimmed); }
+.mcp-tool-example { border-top: 1px solid var(--mantine-color-default-border); padding-top: var(--mantine-spacing-sm); margin-top: auto; }
+.mcp-tool-item > .hint, .mcp-tool-restrictions { margin-bottom: var(--mantine-spacing-sm); }
+.mcp-example-heading { display: flex; justify-content: space-between; align-items: center; gap: var(--mantine-spacing-xs); font-size: var(--mantine-font-size-sm); color: var(--mantine-color-dimmed); }
+.mcp-tool-example > p { font-size: var(--mantine-font-size-sm); line-height: 1.7; margin-top: var(--mantine-spacing-xs); overflow-wrap: anywhere; }
+@media (max-width: 1100px) { .mcp-management-grid { grid-template-columns: minmax(0, 1fr); } }
+@media (max-width: 650px) {
+  .mcp-token-create, .mcp-catalog-filters, .mcp-tool-grid, .mcp-scenarios { grid-template-columns: minmax(0, 1fr); }
+  .mcp-token-create > button { justify-self: start; }
+}

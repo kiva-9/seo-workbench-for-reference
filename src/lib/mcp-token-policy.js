@@ -1,0 +1,1 @@
+module.exports = { MAX_ACTIVE_MCP_TOKENS: 5, MAX_MCP_TOKEN_NAME_LENGTH: 80 };

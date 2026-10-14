@@ -1,0 +1,32 @@
+# ---------- Node ----------
+node_modules/
+npm-debug.log*
+
+# ---------- 运行时数据（绝不能进 Git）----------
+# data/ 里存着谷歌授权令牌、Google Cloud 客户端密钥、以及上传的客户文档。
+# 一旦推上公开仓库，这些机密就泄露了。务必保持忽略。
+data/
+# 数据导入导出文件可能包含凭据与业务数据
+*-import*.sql
+*-export*.sql
+
+# ---------- 系统 / 编辑器 ----------
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/
+
+# ---------- 本地开发配置（不上公网仓库）----------
+.claude/
+.workbuddy/
+.env
+
+# ---------- SSH 密钥（绝不能进 Git）----------
+id_rsa
+id_rsa.pub
+*.pem
+
+# ---------- 临时文件 ----------
+*.tmp
+*.log
